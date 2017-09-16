@@ -1,4 +1,4 @@
-project=app
+project=atm
 architecture=container
 test=minitest
 template=erb

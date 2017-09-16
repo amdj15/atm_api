@@ -13,6 +13,8 @@ GEM
       xpath (~> 2.0)
     concurrent-ruby (1.0.5)
     dotenv (2.2.1)
+    dry-auto_inject (0.4.4)
+      dry-container (>= 0.3.4)
     dry-configurable (0.7.0)
       concurrent-ruby (~> 1.0)
     dry-container (0.6.0)
@@ -47,6 +49,7 @@ GEM
       dry-equalizer (~> 0.2)
       dry-logic (~> 0.4, >= 0.4.0)
       dry-types (~> 0.12.0)
+    fabrication (2.16.3)
     hanami (1.0.0)
       bundler (~> 1.13)
       concurrent-ruby (~> 1.0)
@@ -66,6 +69,9 @@ GEM
     hanami-controller (1.0.1)
       hanami-utils (~> 1.0)
       rack (~> 2.0)
+    hanami-fabrication (0.1.0)
+      fabrication (~> 2.16)
+      hanami-utils (< 2.0)
     hanami-helpers (1.0.0)
       hanami-utils (~> 1.0)
     hanami-mailer (1.0.0)
@@ -151,7 +157,9 @@ DEPENDENCIES
   byebug
   capybara
   dotenv (~> 2.0)
+  dry-auto_inject
   hanami (~> 1.0)
+  hanami-fabrication
   hanami-model (~> 1.0)
   minitest
   pg

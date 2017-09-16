@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'ostruct'
 
 describe Atm::Services::Dimension do
   let(:dimension) { Atm::Services::Dimension.new money }
