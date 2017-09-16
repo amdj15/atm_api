@@ -1,0 +1,8 @@
+.bundle
+.env.development
+.env.production
+.env.test
+
+/data
+/public/assets*
+/tmp
