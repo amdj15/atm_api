@@ -12,6 +12,6 @@ WORKDIR /usr/src/app
 
 ADD . /usr/src/app
 
-# RUN bundle install
+RUN bundle install
 
-# CMD ["bundle", "exec", "hanami", "server"]
+CMD ["bundle", "exec", "hanami", "server"]
