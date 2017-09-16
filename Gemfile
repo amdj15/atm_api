@@ -12,6 +12,7 @@ group :development do
   # Code reloading
   # See: http://hanamirb.org/guides/projects/code-reloading
   gem 'shotgun'
+  gem 'byebug'
 end
 
 group :test, :development do

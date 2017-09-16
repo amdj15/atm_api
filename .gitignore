@@ -2,6 +2,7 @@
 .env.development
 .env.production
 .env.test
+.byebug_history
 
 /data
 /public/assets*
