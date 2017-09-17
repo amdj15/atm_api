@@ -5,6 +5,7 @@ module Api::Controllers::V1
       include Api::Controllers::V1::Responder
 
       attr_reader :interaction
+      accept :json
 
       def initialize
         @interaction = Atm::Interactions::WithdrawCash.new
