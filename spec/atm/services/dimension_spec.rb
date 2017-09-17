@@ -6,12 +6,12 @@ describe Atm::Services::Dimension do
 
   let(:money) do
     [
-      OpenStruct.new({ dimension: 1, amount: 100 }),
-      OpenStruct.new({ dimension: 2, amount: 50 }),
-      OpenStruct.new({ dimension: 5, amount: 20 }),
-      OpenStruct.new({ dimension: 10, amount: 10 }),
-      OpenStruct.new({ dimension: 25, amount: 4 }),
-      OpenStruct.new({ dimension: 50, amount: 10 }),
+      Bank.new({ dimension: 1, amount: 100 }),
+      Bank.new({ dimension: 2, amount: 50 }),
+      Bank.new({ dimension: 5, amount: 20 }),
+      Bank.new({ dimension: 10, amount: 10 }),
+      Bank.new({ dimension: 25, amount: 4 }),
+      Bank.new({ dimension: 50, amount: 10 }),
     ]
   end
 
@@ -137,12 +137,12 @@ describe Atm::Services::Dimension do
       describe 'when banknotes dimension 2 exist' do
         let(:money) do
           [
-            OpenStruct.new({ dimension: 1, amount: 4 }),
-            OpenStruct.new({ dimension: 2, amount: 7 }),
-            OpenStruct.new({ dimension: 5, amount: 8 }),
-            OpenStruct.new({ dimension: 10, amount: 30 }),
-            OpenStruct.new({ dimension: 25, amount: 25 }),
-            OpenStruct.new({ dimension: 50, amount: 10 }),
+            Bank.new({ dimension: 1, amount: 4 }),
+            Bank.new({ dimension: 2, amount: 7 }),
+            Bank.new({ dimension: 5, amount: 8 }),
+            Bank.new({ dimension: 10, amount: 30 }),
+            Bank.new({ dimension: 25, amount: 25 }),
+            Bank.new({ dimension: 50, amount: 10 }),
           ]
         end
 
@@ -166,12 +166,12 @@ describe Atm::Services::Dimension do
       describe 'when only one banknote dimension 2 exists' do
         let(:money) do
           [
-            OpenStruct.new({ dimension: 1, amount: 4 }),
-            OpenStruct.new({ dimension: 2, amount: 1 }),
-            OpenStruct.new({ dimension: 5, amount: 8 }),
-            OpenStruct.new({ dimension: 10, amount: 30 }),
-            OpenStruct.new({ dimension: 25, amount: 25 }),
-            OpenStruct.new({ dimension: 50, amount: 10 }),
+            Bank.new({ dimension: 1, amount: 4 }),
+            Bank.new({ dimension: 2, amount: 1 }),
+            Bank.new({ dimension: 5, amount: 8 }),
+            Bank.new({ dimension: 10, amount: 30 }),
+            Bank.new({ dimension: 25, amount: 25 }),
+            Bank.new({ dimension: 50, amount: 10 }),
           ]
         end
 

@@ -2,11 +2,14 @@ source 'https://rubygems.org'
 
 ruby '2.4.1'
 
+gem 'pg'
+
 gem 'rake'
 gem 'hanami',       '~> 1.0'
 gem 'hanami-model', '~> 1.0'
 
-gem 'pg'
+gem 'dry-types'
+gem 'dry-struct'
 gem 'dry-auto_inject'
 
 group :development do
@@ -27,5 +30,5 @@ group :test do
 end
 
 group :production do
-  # gem 'puma'
+  gem 'puma'
 end

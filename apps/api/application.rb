@@ -16,6 +16,7 @@ module Api
       # When you add new directories, remember to add them here.
       #
       load_paths << [
+        'v1/serializers',
         'v1/controllers',
       ]
 
@@ -236,3 +237,5 @@ module Api
     end
   end
 end
+
+require_relative 'v1/api'

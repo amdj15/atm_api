@@ -2,6 +2,7 @@ module Api::Controllers::V1
   module Banknotes
     class Withdraw
       include Api::Action
+      include Api::Controllers::V1::Responder
 
       attr_reader :interaction
 
@@ -11,7 +12,13 @@ module Api::Controllers::V1
 
       def call(params)
         result = interaction.call(params.to_h[:amount].to_i)
-        self.body = result.banknotes.to_json
+
+        if result.successful?
+          respond result.banknotes, serializer: Api::Serializer::V1::Banknotes
+        else
+          respond result.error, status: result.error.status,
+                                serializer: Api::Serializer::V1::Error
+        end
       end
     end
   end

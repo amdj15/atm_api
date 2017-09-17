@@ -113,6 +113,7 @@ GEM
       mini_portile2 (~> 2.2.0)
     pg (0.21.0)
     public_suffix (3.0.0)
+    puma (3.10.0)
     rack (2.0.3)
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
@@ -158,11 +159,14 @@ DEPENDENCIES
   capybara
   dotenv (~> 2.0)
   dry-auto_inject
+  dry-struct
+  dry-types
   hanami (~> 1.0)
   hanami-fabrication
   hanami-model (~> 1.0)
   minitest
   pg
+  puma
   rake
   shotgun
 
