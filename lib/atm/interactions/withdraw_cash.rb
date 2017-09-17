@@ -18,7 +18,7 @@ module Atm
 
           return failure(not_enough_cash_error) if withdraw.nil?
 
-          repository.update_balance withdraw
+          repository.decrease_balance withdraw
           success banknotes: withdraw
         end
       end

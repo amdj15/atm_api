@@ -12,10 +12,12 @@ module Atm
 
     namespace 'errors' do
       register('not_enough_cash_error') { Atm::Errors::NotEnoughCash.new }
+      register('validation') { Atm::Errors::Validation }
     end
 
     namespace 'schemas' do
       register('withdraw_params') { Atm::Schemas::Withdraw }
+      register('inrease_cash') { Atm::Schemas::IncreaseCash }
     end
   end
 

@@ -27,6 +27,7 @@ group :test do
   gem 'minitest'
   gem 'capybara'
   gem 'hanami-fabrication'
+  gem 'm'
 end
 
 group :production do

@@ -1,6 +1,20 @@
 class BankRepository < Hanami::Repository
-  def update_balance(withdraw)
-    dimensions = withdraw.reduce({}) do |acc, current|
+  def decrease_balance(data)
+    update_balance(data) do |model, dimensions|
+      model.amount - dimensions[model.dimension][:amount]
+    end
+  end
+
+  def increase_balance(data)
+    update_balance(data) do |model, dimensions|
+      model.amount + dimensions[model.dimension][:amount]
+    end
+  end
+
+  private
+
+  def update_balance(banknotes)
+    dimensions = banknotes.reduce({}) do |acc, current|
       acc[current[:dimension]] = current
       acc
     end
@@ -9,7 +23,7 @@ class BankRepository < Hanami::Repository
 
     transaction do
       models.map do |model|
-        amount = model.amount - dimensions[model.dimension][:amount]
+        amount = yield model, dimensions
         update(model.id, amount: amount)
       end
     end

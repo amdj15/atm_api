@@ -1,8 +1,9 @@
 require 'bundler/setup'
 require 'hanami/setup'
 require 'hanami/model'
-require_relative '../lib/atm'
+
 require_relative '../apps/api/application'
+require_relative '../lib/atm/interactor'
 
 Hanami.configure do
   mount Api::Application, at: '/api'

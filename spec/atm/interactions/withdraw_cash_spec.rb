@@ -6,14 +6,14 @@ describe Atm::Interactions::WithdrawCash do
   let(:repository) do
     new_mock do |mock|
       mock.expect :all, bank
-      mock.expect :update_balance, nil, [Array]
+      mock.expect :decrease_balance, nil, [Array]
     end
   end
 
   let(:bank) do
     [
-      OpenStruct.new({ dimension: 25, amount: 4 }),
-      OpenStruct.new({ dimension: 50, amount: 10 })
+      Bank.new({ dimension: 25, amount: 4 }),
+      Bank.new({ dimension: 50, amount: 10 })
     ]
   end
 
@@ -51,7 +51,6 @@ describe Atm::Interactions::WithdrawCash do
 
     it 'should has correnct banknotes' do
       result = interaction.call amount
-
       assert_equal expected_banknotes, result.banknotes
     end
   end
