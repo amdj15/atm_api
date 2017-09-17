@@ -4,6 +4,8 @@
 .env.test
 .byebug_history
 
+docker-compose.yml
+
 /data
 /public/assets*
 /tmp
