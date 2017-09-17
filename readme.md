@@ -51,6 +51,20 @@ Errors:
 }
 ```
 
+```json
+{
+    "error": {
+        "status": 422,
+        "title": "Validation error",
+        "meta": {
+            "amount": [
+                "must be greater than 0"
+            ]
+        }
+    }
+}
+```
+
 ## Add money to ATM
 ### Request: `POST /api/banknotes`
 ```json
