@@ -1,5 +1,7 @@
 # ATM api
 
+[![Build Status](https://travis-ci.org/amdj15/atm_api.svg?branch=master)](https://travis-ci.org/amdj15/atm_api)
+
 ## Installation
 To run localy create `.env.development` and `.env.test` from `.env.sample`
 Create `docker-compose.yml` file from `docker-compose.yml.sample`
