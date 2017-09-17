@@ -10,8 +10,8 @@ module Atm
 
       def call(params)
         valid(schema, params) do
-          if (params[:banknotes].any?)
-            success repository.increase_balance params[:banknotes]
+          if params[:banknotes].any?
+            success banknotes: repository.increase_balance(params[:banknotes])
           else
             failure validation_error_class.new({ banknotes: ['Can\'t be balnk'] })
           end

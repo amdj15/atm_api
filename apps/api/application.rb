@@ -239,3 +239,4 @@ module Api
 end
 
 require_relative 'v1/api'
+require_relative 'params_mapper'
