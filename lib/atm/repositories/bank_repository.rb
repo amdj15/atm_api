@@ -11,6 +11,13 @@ class BankRepository < Hanami::Repository
     end
   end
 
+  def fetch_by_dimensions(dimensions)
+    banks.where(dimension: dimensions).to_a.reduce({}) do |acc, current|
+      acc[current.dimension] = current
+      acc
+    end
+  end
+
   private
 
   def update_balance(banknotes)

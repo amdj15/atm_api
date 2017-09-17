@@ -2,20 +2,24 @@ require 'spec_helper'
 
 describe Atm::Interactions::IncreaseCash do
   let(:interaction) { Atm::Interactions::IncreaseCash.new repository: repo }
-  let(:repo) do
-    new_mock do |mock|
-      mock.expect :increase_balance, nil, [Array]
-    end
-  end
 
   let(:params) do
     {
       banknotes: [
-        { dimension: 25, amount: 2 },
         { dimension: 50, amount: 2 },
       ]
     }
   end
+
+  let(:repo) do
+    new_mock do |mock|
+      mock.expect :increase_balance, [], [Array]
+      mock.expect :fetch_by_dimensions, Hash.new, [Array]
+      mock.expect :create, Bank.new, [Hash]
+    end
+  end
+
+  let(:banknotes) { Bank.new({ dimension: 50, amount: 2 }) }
 
   it 'should increase cash amount in repository' do
     result = interaction.call params
@@ -25,6 +29,13 @@ describe Atm::Interactions::IncreaseCash do
   it 'should return successful result' do
     result = interaction.call params
     assert_equal true, result.successful?
+  end
+
+  it 'should has correct result' do
+    result = interaction.call params
+
+    assert_kind_of Array, result.banknotes
+    assert_equal [banknotes], result.banknotes
   end
 
   describe 'when params are invalid' do

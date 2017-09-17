@@ -40,4 +40,26 @@ describe BankRepository do
       end
     end
   end
+
+  describe '#fetch_by_dimensions' do
+    let(:dimensions) { [5, 10] }
+
+    describe 'when nothing is found' do
+      before do
+        repository.clear
+      end
+
+      it 'should return empty hash' do
+        result = repository.fetch_by_dimensions(dimensions)
+        assert_equal Hash.new, result
+      end
+    end
+
+    describe 'when dimensions exists' do
+      it 'should return hash of dimensions with correct keys' do
+        result = repository.fetch_by_dimensions(dimensions)
+        assert_equal [5, 10], result.keys
+      end
+    end
+  end
 end
