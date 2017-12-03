@@ -16,11 +16,15 @@ group :development do
   # Code reloading
   # See: http://hanamirb.org/guides/projects/code-reloading
   gem 'shotgun'
+  gem 'rubocop', require: false
+  gem 'danger-gitlab', require: false
+  gem 'danger-lgtm', require: false
+  gem 'danger-rubocop', require: false
 end
 
 group :test, :development do
   gem 'dotenv', '~> 2.0'
-  gem 'byebug'
+  gem 'pry'
 end
 
 group :test do
